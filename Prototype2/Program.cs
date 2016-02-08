@@ -27,7 +27,7 @@ namespace Prototype2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ItemSelectForm());
-            
+
             /*
             string file = " ";
             char[] trim = new char[1] { '"' };
@@ -56,7 +56,7 @@ namespace Prototype2
                 Console.WriteLine("invalid image");
                 
             }*/
-        }
+        }/*
         static void Run(string file)
         {
             //load image
@@ -94,8 +94,8 @@ namespace Prototype2
             (tryUseCuda && CudaInvoke.HasCuda) ? "GPU"
             : (tryUseOpenCL && CvInvoke.HaveOpenCLCompatibleGpuDevice) ? "OpenCL"
             : "CPU",
-            detectionTime));*/
-        }
+            detectionTime));
+        }*/
     }
 }
 
