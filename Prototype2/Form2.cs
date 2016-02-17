@@ -29,12 +29,16 @@ namespace Prototype2
         public int totalDickCount = 0;
         double totalFrameCount;
         double frameNum = 0;
+        frameInfo _frameInfo;
+        List<frameInfo> frameList = new List<frameInfo>();
+
         Stopwatch timer = new Stopwatch();
 
         public Form2()
         {
             InitializeComponent();
         }
+
         public Form2(string file)
         {
             InitializeComponent();
@@ -43,13 +47,14 @@ namespace Prototype2
             try
             {
                 frameProcessing();
-
+                
             }
             catch (NullReferenceException excpt)
             {
                 MessageBox.Show(excpt.Message);
             }
         }
+
         private void frameProcessing()
         {
             _capture = new Capture(_file);
@@ -59,6 +64,7 @@ namespace Prototype2
             _capture.ImageGrabbed += ProcessFrame;
             if (timer.ElapsedMilliseconds == 1000) _capture.Stop();
         }
+
         private void ProcessFrame(object sender, EventArgs arg)
         {
             Mat frame = new Mat();
@@ -68,6 +74,8 @@ namespace Prototype2
             frame1 = frame.ToImage<Bgr, Byte>();
             frame1 = frame1.Resize(.5, Emgu.CV.CvEnum.Inter.Cubic);
             frame = frame1.Mat;
+            _frameInfo = new frameInfo();
+            _frameInfo.frameNum = (int)frameNum;
             //MessageBox.Show(_capture.Height + " " + _capture.Width + "\n" + frame1.Height + " " + frame1.Width);
             if (frame != null)
             {
@@ -80,7 +88,7 @@ namespace Prototype2
                        1.1,
                        30,
                        new Size(20, 20));
-                    /*Rectangle[] pussyDetected = cascadePuss.DetectMultiScale(
+                    Rectangle[] pussyDetected = cascadePuss.DetectMultiScale(
                        ugray,
                        1.1,
                        30,
@@ -89,14 +97,17 @@ namespace Prototype2
                        ugray,
                        1.1,
                        35,
-                       new Size(20, 20));*/
-                    progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label1.Text = frameNum.ToString();}));
-                    
-                }
-                
+                       new Size(20, 20));
+                    if (breastDetected.Count() > 0)
+                        _frameInfo.boobDetected = true;
+                    if (pussyDetected.Count() > 0)
+                        _frameInfo.pussDetected = true;
+                    if (dickDetected.Count() > 0)
+                        _frameInfo.penDetected = true;
+                    frameList.Add(_frameInfo);
+                    progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
+                }   
             }
-            
-
         }
 
         private void button1_Click(object sender, EventArgs e)

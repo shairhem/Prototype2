@@ -46,3 +46,21 @@ D:\temp\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.itemBrowser.reso
 D:\temp\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.ItemSelectForm.resources
 D:\temp\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Properties.Resources.resources
 D:\temp\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csproj.GenerateResource.Cache
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Prototype2.exe.config
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.exe
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.pdb
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Prototype2.exe
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Prototype2.pdb
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\ZedGraph.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.Cuda.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.ML.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.UI.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.Util.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csprojResolveAssemblyReference.cache
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Form1.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Form2.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.itemBrowser.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.ItemSelectForm.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Properties.Resources.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csproj.GenerateResource.Cache
