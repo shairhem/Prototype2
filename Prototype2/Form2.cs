@@ -106,7 +106,7 @@ namespace Prototype2
                         _frameInfo.pussDetected = true;
                     if (dickDetected.Count() > 0)
                         _frameInfo.penDetected = true;
-                    //if(_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
+                    if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
                         frameList.Add(_frameInfo);
                     progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
                 }   
