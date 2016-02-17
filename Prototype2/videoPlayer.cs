@@ -16,5 +16,17 @@ namespace Prototype2
         {
             InitializeComponent();
         }
+
+        public videoPlayer(List<frameInfo> frameInfoList,int fps)
+        {
+            InitializeComponent();
+            string temp = "";
+            foreach(frameInfo f in frameInfoList)
+            {
+                temp += f.frameNum + " " + f.boobDetected + " " + f.pussDetected + " " + f.penDetected;
+                temp += "\n";
+            }
+            textBox1.Text = temp;
+        }
     }
 }

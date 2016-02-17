@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prototype2
 {
-    class frameInfo
+    public class frameInfo
     {
         private int _frameNum;
         private bool _boobDetected;

@@ -31,6 +31,7 @@ namespace Prototype2
         double frameNum = 0;
         frameInfo _frameInfo;
         List<frameInfo> frameList = new List<frameInfo>();
+        videoPlayer player;
 
         Stopwatch timer = new Stopwatch();
 
@@ -62,7 +63,8 @@ namespace Prototype2
             progressBar1.Maximum = (int)totalFrameCount;
             timer.Start();
             _capture.ImageGrabbed += ProcessFrame;
-            if (timer.ElapsedMilliseconds == 1000) _capture.Stop();
+            //if (timer.ElapsedMilliseconds == 1000) _capture.Stop();
+            
         }
 
         private void ProcessFrame(object sender, EventArgs arg)
@@ -104,9 +106,14 @@ namespace Prototype2
                         _frameInfo.pussDetected = true;
                     if (dickDetected.Count() > 0)
                         _frameInfo.penDetected = true;
-                    frameList.Add(_frameInfo);
+                    if(_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
+                        frameList.Add(_frameInfo);
                     progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
                 }   
+            }
+            if (frameNum == totalFrameCount)
+            {
+                progressBar1.Invoke(new MethodInvoker(delegate { button2.Enabled = true; }));
             }
         }
 
@@ -130,6 +137,14 @@ namespace Prototype2
 
                 _captureInProgress = !_captureInProgress;
             }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            player = new videoPlayer(frameList, (int)frameNum);
+            player.Show();
         }
     }
 }

@@ -64,3 +64,4 @@ C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.ItemSelectForm.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Properties.Resources.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csproj.GenerateResource.Cache
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.videoPlayer.resources
