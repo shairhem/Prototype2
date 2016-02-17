@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Prototype2
 {
@@ -17,16 +18,18 @@ namespace Prototype2
             InitializeComponent();
         }
 
-        public videoPlayer(List<frameInfo> frameInfoList,int fps)
+        public videoPlayer(List<frameInfo> frameInfoList,int fps,string filename)
         {
             InitializeComponent();
-            string temp = "";
-            foreach(frameInfo f in frameInfoList)
+            axWindowsMediaPlayer1.URL = @filename;
+            ArrayList list = new ArrayList();
+
+            foreach (frameInfo f in frameInfoList)
             {
-                temp += f.frameNum + " " + f.boobDetected + " " + f.pussDetected + " " + f.penDetected;
-                temp += "\n";
+                list.Add(new frameInfo(f.frameNum,f.boobDetected,f.pussDetected,f.penDetected));
             }
-            textBox1.Text = temp;
+            dataGridView1.DataSource = list;
         }
+        
     }
 }

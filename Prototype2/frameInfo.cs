@@ -12,6 +12,17 @@ namespace Prototype2
         private bool _boobDetected;
         private bool _pussDetected;
         private bool _penDetected;
+        
+        public frameInfo()
+        {}
+
+        public frameInfo(int frame, bool boob, bool puss, bool pen)
+        {
+            _frameNum = frame;
+            _boobDetected = boob;
+            _pussDetected = puss;
+            _penDetected = pen;
+        }
 
         public int frameNum
         {
