@@ -17,10 +17,10 @@ namespace Prototype2
         {
             InitializeComponent();
         }
-
-        public videoPlayer(List<frameInfo> frameInfoList,int fps,string filename)
+        public videoPlayer(List<frameInfo> frameInfoList,int fps,string filename, int totalFrames)
         {
             InitializeComponent();
+            //this.Text = fps.ToString();
             axWindowsMediaPlayer1.URL = @filename;
             ArrayList list = new ArrayList();
 
@@ -30,6 +30,15 @@ namespace Prototype2
             }
             dataGridView1.DataSource = list;
         }
-        
+
+        //public float getSeconds(int frameNum, int fps, int totalFrames)
+        //{
+
+        //}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString());
+        }
     }
 }

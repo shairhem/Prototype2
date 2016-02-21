@@ -27,7 +27,7 @@ namespace Prototype2
         public int totalBreastCount = 0;
         public int totalPussyCount = 0;
         public int totalDickCount = 0;
-        double totalFrameCount;
+        double totalFrameCount = 0;
         double frameNum = 0;
         frameInfo _frameInfo;
         List<frameInfo> frameList = new List<frameInfo>();
@@ -137,12 +137,11 @@ namespace Prototype2
 
                 _captureInProgress = !_captureInProgress;
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            player = new videoPlayer(frameList, (int)frameNum,_file);
+            player = new videoPlayer(frameList, (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps), _file,(int)totalFrameCount);
             this.Close();
             player.Show();
         }
