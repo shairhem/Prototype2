@@ -220,9 +220,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private Emgu.CV.UI.ImageBox imageBox1;
-        private System.Windows.Forms.Button button1;
         private Emgu.CV.UI.ImageBox imgBox;
         private System.Windows.Forms.Button playToggle;
         private System.Windows.Forms.Label label1;

@@ -12,7 +12,7 @@ namespace Prototype2
         private bool _boobDetected;
         private bool _pussDetected;
         private bool _penDetected;
-        
+        private string _timeFrame;
         public frameInfo()
         {}
 
@@ -22,6 +22,26 @@ namespace Prototype2
             _boobDetected = boob;
             _pussDetected = puss;
             _penDetected = pen;
+        }
+        public frameInfo(string frame,int frameNum, bool boob, bool puss, bool pen)
+        {
+            _timeFrame = frame;
+            _frameNum = frameNum;
+            _boobDetected = boob;
+            _pussDetected = puss;
+            _penDetected = pen;
+        }
+    
+        public string timeFrame
+        {
+            get
+            {
+                return _timeFrame;
+            }
+            set
+            {
+                _timeFrame = value;
+            }
         }
 
         public int frameNum

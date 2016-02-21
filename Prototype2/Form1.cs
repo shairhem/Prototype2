@@ -33,7 +33,6 @@ namespace Prototype2
         int _nn = 0;
         double _rescale = 1.0;
         bool _pauseAtDetection = false;
-        bool freezeFrame = false;
         StreamWriter writer;
 
         public Form1()

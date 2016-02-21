@@ -4,15 +4,8 @@ C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csproj.ResolveComReference.cache
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Prototype2.exe
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Prototype2.pdb
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\ZedGraph.dll
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.xml
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.Cuda.xml
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.ML.xml
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.UI.xml
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.Util.xml
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Interop.WMPLib.dll
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\AxInterop.WMPLib.dll
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csprojResolveAssemblyReference.cache
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Form1.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.Form2.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.itemBrowser.resources
