@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Prototype2
 {
@@ -23,6 +24,7 @@ namespace Prototype2
             _pussDetected = puss;
             _penDetected = pen;
         }
+
         public frameInfo(string frame,int frameNum, bool boob, bool puss, bool pen)
         {
             _timeFrame = frame;
@@ -31,7 +33,11 @@ namespace Prototype2
             _pussDetected = puss;
             _penDetected = pen;
         }
-    
+
+        public Rectangle[] boobArray { get; set; }
+        public Rectangle[] pussyArray { get; set; }
+        public Rectangle[] dickArray { get; set; }
+
         public string timeFrame
         {
             get

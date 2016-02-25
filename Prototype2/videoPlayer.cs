@@ -67,5 +67,7 @@ namespace Prototype2
             double timeFrame = getTimeFrame(frameNum, fps);
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = timeFrame;
         }
+
+        
     }
 }

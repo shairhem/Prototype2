@@ -118,6 +118,12 @@
     <Compile Include="ItemSelectForm.Designer.cs">
       <DependentUpon>ItemSelectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingForm.Designer.cs">
+      <DependentUpon>loadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="videoPlayer.cs">
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemSelectForm.resx">
       <DependentUpon>ItemSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingForm.resx">
+      <DependentUpon>loadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
-
 //emgu
 using Emgu.CV;
 using Emgu.CV.Structure;
@@ -23,18 +22,26 @@ namespace Prototype2
         private Capture _capture = null;
         private bool _captureInProgress;
         public string file = null;
+        private int fps = 0;
         private int totalFrames = 0;
-        public videoPlayerv2(string file)
+        private int roiView = 0;
+        //list
+        List<frameInfo> frameInfoList;
+        List<frameInfo> list = new List<frameInfo>();
+
+        //shapes
+        Rectangle[] boobs = null;
+        Rectangle[] pussy = null;
+        Rectangle[] dick = null;
+
+        public videoPlayerv2(string file, List<frameInfo> frameInfoList)
         {
             InitializeComponent();
             this.file = file;
+            this.frameInfoList = frameInfoList;
             try
             {
-                _capture = new Capture(file);
-                totalFrames = (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameCount);
-                Video_CNTRL.Minimum = 0;
-                Video_CNTRL.Maximum = totalFrames;
-                _capture.ImageGrabbed += ProcessFrame;
+                frameProcessing();   
             }
             catch (NullReferenceException excpt)
             {
@@ -42,6 +49,64 @@ namespace Prototype2
             }
         }
 
+        public videoPlayerv2(string file, List<frameInfo> frameInfoList,int roiView)
+        {
+            InitializeComponent();
+            this.file = file;
+            this.frameInfoList = frameInfoList;
+            try
+            {
+                frameProcessing();
+            }
+            catch (NullReferenceException excpt)
+            {
+                MessageBox.Show(excpt.Message);
+            }
+        }
+
+        public void frameProcessing()
+        {
+            _capture = new Capture(file);
+            totalFrames = (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameCount);
+            fps = (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
+            fillDataGrid(frameInfoList, fps, totalFrames);
+            Video_CNTRL.Minimum = 0;
+            Video_CNTRL.Maximum = totalFrames;
+            _capture.ImageGrabbed += ProcessFrame;
+        }
+
+        private void videoPlayerv2_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fillDataGrid(List<frameInfo> frameInfoList, int fps, int frameCount)
+        {
+            //MessageBox.Show(frameInfoList.Count.ToString() + "dit");
+            foreach (frameInfo f in frameInfoList)
+            {
+                list.Add(new frameInfo(getPosition(f.frameNum, fps), f.frameNum, f.boobDetected, f.pussDetected, f.penDetected));
+            }
+            dataGridView1.DataSource = list;
+            dataGridView1.Columns["frameNum"].Visible = false;
+        }
+
+        public string getPosition(int frameNum, int fps)
+        {
+            double sec = getTimeFrame(frameNum, fps);
+            //MessageBox.Show(sec.ToString());
+            TimeSpan time = TimeSpan.FromSeconds(sec);
+            //return time.Milliseconds.ToString();
+            return time.ToString(@"hh\:mm\:ss\.ffff");
+        }
+
+        public double getTimeFrame(int frameNum, int fps)
+        {
+            double seconds = 0;
+            seconds = (double)Decimal.Divide(frameNum, fps);
+            //MessageBox.Show(frameNum + " " + fps + " " + seconds + "  ");
+            return seconds;
+        }
 
         private void ProcessFrame(object sender, EventArgs arg)
         {
@@ -99,7 +164,42 @@ namespace Prototype2
             }
             else
             {
-                imageBox1.Image = frame;
+                if(roiView == 0)
+                    imageBox1.Image = frame;
+                else if(roiView == 1)
+                {
+                    foreach (Rectangle b in boobs)
+                    {
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
+                    }
+                    foreach (Rectangle b in dick)
+                    {
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 2);
+                    }
+                    foreach (Rectangle b in pussy)
+                    {
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 2);
+                    }
+                    imageBox1.Image = frame;
+                }
+                else
+                {
+
+                    foreach (Rectangle b in boobs)
+                    {
+                        
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 0);
+                    }
+                    foreach (Rectangle b in dick)
+                    {
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 0);
+                    }
+                    foreach (Rectangle b in pussy)
+                    {
+                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 0);
+                    }
+                    imageBox1.Image = frame;
+                }
             }
         }
 
@@ -120,7 +220,8 @@ namespace Prototype2
             else
             {
                 Control.Text = Text;
-                this.Refresh();
+                label1.Refresh();
+                label2.Refresh();
             }
         }
 
@@ -169,11 +270,6 @@ namespace Prototype2
             }
         }
 
-        private void videoPlayerv2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("pasok");
@@ -194,6 +290,35 @@ namespace Prototype2
 
                 _captureInProgress = !_captureInProgress;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //fillDataGrid(frameInfoList, fps, totalFrames);
+            List<String> fuck = new List<String>();
+            loadingForm loadForm = new loadingForm(frameInfoList.Count);
+            loadForm.Show();
+            foreach (frameInfo x in frameInfoList)
+            {
+                _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, x.frameNum);
+                fuck.Add(_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec).ToString() + "|| x.frameNum");
+                loadForm.increment(1);
+            }
+            dataGridView1.DataSource = fuck;
+            _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, 0);
+            //dataGridView1.Columns["frameNum"].Visible = false;
+
+        }
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int frameNum = list.ElementAt(e.RowIndex).frameNum;
+            //MessageBox.Show(frameNum.ToString());
+            double timeFrame = getTimeFrame(frameNum, fps);
+            timeFrame = timeFrame * 1000;
+            _capture.Pause();
+            _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec, timeFrame);
+            _capture.Start();
+            //MessageBox.Show(timeFrame.ToString());
         }
     }
 }

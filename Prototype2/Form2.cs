@@ -33,8 +33,8 @@ namespace Prototype2
         int roiView = 0;
         frameInfo _frameInfo;
         List<frameInfo> frameList = new List<frameInfo>();
-        videoPlayer player;
-        VideoWriter writer;
+        //videoPlayer player;
+        //VideoWriter writer;
         Stopwatch timer = new Stopwatch();
 
         public Form2()
@@ -67,7 +67,6 @@ namespace Prototype2
             timer.Start();
             _capture.ImageGrabbed += ProcessFrame;
             //if (timer.ElapsedMilliseconds == 1000) _capture.Stop();
-            
         }
 
         private void ProcessFrame(object sender, EventArgs arg)
@@ -99,7 +98,14 @@ namespace Prototype2
                         30,
                         new Size(20, 20));
                         if (breastDetected.Count() > 0)
+                        {
                             _frameInfo.boobDetected = true;
+                            if(roiView > 0)
+                            {
+                                _frameInfo.boobArray = breastDetected;
+                            }
+                        }
+                        
                     }
                     if (selectedMode == 0 || selectedMode == 2)
                     {
@@ -109,7 +115,15 @@ namespace Prototype2
                         30,
                         new Size(20, 20));
                         if (pussyDetected.Count() > 0)
+                        {
                             _frameInfo.pussDetected = true;
+                            if (roiView > 0)
+                            {
+                                _frameInfo.pussyArray = pussyDetected;
+                            }
+                        }
+
+                            
                     }
                     if (selectedMode == 0 || selectedMode == 3)
                     {
@@ -119,23 +133,18 @@ namespace Prototype2
                            35,
                            new Size(20, 20));
                         if (dickDetected.Count() > 0)
+                        {
                             _frameInfo.penDetected = true;
+                            if (roiView > 0)
+                            {
+                                _frameInfo.dickArray = dickDetected;
+                            }
+                        }
+                            
                     }
-                    if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
+                    //if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
                         frameList.Add(_frameInfo);
                     progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
-                }
-                if (roiView > 0)
-                {
-                    try
-                    {
-                        writer.Write(frame);
-                    }
-                    catch(Exception exception)
-                    {
-                        MessageBox.Show(exception.ToString());
-                    }
-                    
                 }
             }
             
@@ -169,9 +178,26 @@ namespace Prototype2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            player = new videoPlayer(frameList, (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps), _file,(int)totalFrameCount);
-            this.Close();
-            player.Show();
+            //player = new videoPlayer(frameList, (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps), _file,(int)totalFrameCount);
+            videoPlayerv2 player;
+            //MessageBox.Show(roiView.ToString());
+            if (roiView == 0)
+            {
+                player = new videoPlayerv2(_file, frameList);
+                player.Show();
+                this.Close();
+            }
+            else
+            {
+                if(roiView == 1)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

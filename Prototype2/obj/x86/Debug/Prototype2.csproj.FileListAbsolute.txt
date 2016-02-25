@@ -29,3 +29,4 @@ C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.UI.xml
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.Util.xml
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.videoPlayerv2.resources
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.loadingForm.resources

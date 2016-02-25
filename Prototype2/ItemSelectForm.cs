@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
 namespace Prototype2
 {
     public partial class ItemSelectForm : Form
@@ -80,9 +81,8 @@ namespace Prototype2
                     return;
                 if (radioButton1.Checked)
                 {
-                    testMode = new videoPlayerv2(file);
+                    testMode = new videoPlayerv2(file,null);
                     testMode.Show();
-
                 }
                 else
                 {

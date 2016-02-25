@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.imgBox = new Emgu.CV.UI.ImageBox();
             this.playToggle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +44,10 @@
             this.totalBreast = new System.Windows.Forms.Label();
             this.totalF = new System.Windows.Forms.Label();
             this.totalG = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
+            this.imgBox = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgBox
-            // 
-            this.imgBox.Location = new System.Drawing.Point(12, 12);
-            this.imgBox.Name = "imgBox";
-            this.imgBox.Size = new System.Drawing.Size(685, 415);
-            this.imgBox.TabIndex = 2;
-            this.imgBox.TabStop = false;
             // 
             // playToggle
             // 
@@ -187,6 +179,14 @@
             this.totalG.Size = new System.Drawing.Size(0, 13);
             this.totalG.TabIndex = 19;
             // 
+            // imgBox
+            // 
+            this.imgBox.Location = new System.Drawing.Point(12, 12);
+            this.imgBox.Name = "imgBox";
+            this.imgBox.Size = new System.Drawing.Size(685, 415);
+            this.imgBox.TabIndex = 2;
+            this.imgBox.TabStop = false;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(961, 478);
@@ -211,8 +211,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
