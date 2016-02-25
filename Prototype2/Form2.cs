@@ -142,7 +142,7 @@ namespace Prototype2
                         }
                             
                     }
-                    //if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
+                    if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
                         frameList.Add(_frameInfo);
                     progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
                 }
@@ -189,14 +189,9 @@ namespace Prototype2
             }
             else
             {
-                if(roiView == 1)
-                {
-
-                }
-                else
-                {
-
-                }
+                player = new videoPlayerv2(_file, frameList, roiView);
+                player.Show();
+                this.Close();
             }
         }
     }
