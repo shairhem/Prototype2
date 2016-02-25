@@ -14,7 +14,7 @@ namespace Prototype2
     {
         bool itemselected = false;
         bool radioselected = false;
-        bool pauseAtDetection = false;
+        int roiView = 0;
         public ItemSelectForm()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace Prototype2
             button1.Enabled = false;
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
+            comboBox3.SelectedIndex = 0;
         }
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
@@ -49,7 +50,8 @@ namespace Prototype2
             int frameskip = 0;
             int nn = 25;
             double rescale = 1.0;
-            Form1 testMode;
+            //Form1 testMode;
+            videoPlayerv2 testMode;
             Form2 stndMode;
             if (file.EndsWith(".mkv") || file.EndsWith(".mp4") || file.EndsWith(".avi"))
             {
@@ -78,12 +80,21 @@ namespace Prototype2
                     return;
                 if (radioButton1.Checked)
                 {
-                    testMode = new Form1(file, frameskip, rescale, pauseAtDetection, nn);
+                    testMode = new videoPlayerv2(file);
                     testMode.Show();
+
                 }
                 else
                 {
-                    stndMode = new Form2(file);
+                    if (checkBox3.Checked)
+                        roiView = 1;
+                    else if (checkBox4.Checked)
+                        roiView = 2;
+                    else
+                        roiView = 0;
+
+                    //stndMode = new Form2(file);
+                    stndMode = new Form2(file, comboBox3.SelectedIndex,roiView);
                     stndMode.Show();
                 }
             }
@@ -109,10 +120,19 @@ namespace Prototype2
             if (radioButton2.Checked && itemselected)
             {
                 button1.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
             }
             if (radioButton2.Checked)
             {
                 radioselected = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+            }
+            else
+            {
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
             }
         }
 
@@ -141,12 +161,17 @@ namespace Prototype2
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked)
-                pauseAtDetection = true;
+                checkBox4.Enabled = false;
             else
-                pauseAtDetection = false;
+                checkBox4.Enabled = true;
         }
 
-
-
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox4.Checked)
+                checkBox3.Enabled = false;
+            else
+                checkBox3.Enabled = true;
+        }
     }
 }

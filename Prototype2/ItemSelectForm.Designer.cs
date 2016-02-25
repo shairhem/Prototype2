@@ -41,6 +41,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -67,7 +70,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(112, 169);
+            this.button1.Location = new System.Drawing.Point(201, 172);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -78,7 +81,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(38, 73);
+            this.radioButton1.Location = new System.Drawing.Point(30, 73);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(76, 17);
             this.radioButton1.TabIndex = 3;
@@ -90,7 +93,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(38, 99);
+            this.radioButton2.Location = new System.Drawing.Point(30, 96);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(98, 17);
             this.radioButton2.TabIndex = 4;
@@ -156,13 +159,48 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(39, 124);
+            this.checkBox3.Enabled = false;
+            this.checkBox3.Location = new System.Drawing.Point(41, 119);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(115, 17);
-            this.checkBox3.TabIndex = 9;
-            this.checkBox3.Text = "Pause at detection";
+            this.checkBox3.Size = new System.Drawing.Size(131, 17);
+            this.checkBox3.TabIndex = 10;
+            this.checkBox3.Text = "enclose ROI in square";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Enabled = false;
+            this.checkBox4.Location = new System.Drawing.Point(41, 136);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(109, 17);
+            this.checkBox4.TabIndex = 11;
+            this.checkBox4.Text = "blur detected part";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "All",
+            "Breast",
+            "Female Genital",
+            "Male Genital"});
+            this.comboBox3.Location = new System.Drawing.Point(30, 172);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(109, 21);
+            this.comboBox3.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "part to detect: ";
             // 
             // ItemSelectForm
             // 
@@ -170,6 +208,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 204);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.checkBox2);
@@ -204,5 +245,8 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label2;
     }
 }

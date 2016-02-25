@@ -16,3 +16,16 @@ C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.exe
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.pdb
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.csprojResolveAssemblyReference.cache
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.Cuda.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.DebuggerVisualizers.VS2012.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.ML.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.UI.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.Util.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\ZedGraph.dll
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.Cuda.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.ML.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.CV.UI.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\bin\x86\Debug\Emgu.Util.xml
+C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2\Prototype2\obj\x86\Debug\Prototype2.videoPlayerv2.resources

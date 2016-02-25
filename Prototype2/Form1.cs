@@ -32,14 +32,13 @@ namespace Prototype2
         int frameCtr = 0;
         int _nn = 0;
         double _rescale = 1.0;
-        bool _pauseAtDetection = false;
         StreamWriter writer;
 
         public Form1()
         {
             InitializeComponent();
         }
-        public Form1(string file,int frameskip, double rescale,bool pauseAtDetection,int nn)
+        public Form1(string file,int frameskip, double rescale,int nn)
         {
             InitializeComponent();
             //reset.Hide();
@@ -47,7 +46,6 @@ namespace Prototype2
             _file = file;
             _frameskip = frameskip;
             _rescale = rescale;
-            _pauseAtDetection = pauseAtDetection;
             _nn = nn;
             CvInvoke.UseOpenCL = false;
             try
@@ -120,7 +118,7 @@ namespace Prototype2
                      totalBreastCount += breastCount;
                      totalPussyCount += pussyCount;
                      totalDickCount += dickCount;
-                     if ((breastCount > 0 || pussyCount > 0 || dickCount > 0) && _pauseAtDetection)
+                     /*if ((breastCount > 0 || pussyCount > 0 || dickCount > 0) && _pauseAtDetection)
                      {
                          _capture.Pause();
                          playToggle.Invoke(new MethodInvoker(delegate { playToggle.Text = "Start"; }));
@@ -138,7 +136,7 @@ namespace Prototype2
                              temp += "" + dickCount + "dick(s) found\n";
                          }
                          MessageBox.Show(temp);
-                     }
+                     }*/
                 }            
             }
             if (_frameskip > 0)
@@ -153,7 +151,6 @@ namespace Prototype2
         {
             string text = "=frame " + frameCount + ": Breast: " + breastCount + " || Female: "  + fGenCount + " || Male: " + mGenCount+  " \n";
             logbox.AppendText(text);
-            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -218,6 +215,7 @@ namespace Prototype2
                 writer.Close();
                 MessageBox.Show("Log saved");
             }
-        }   
+        }
+        
     }
 }

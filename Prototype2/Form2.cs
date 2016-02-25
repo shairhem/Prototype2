@@ -29,10 +29,12 @@ namespace Prototype2
         public int totalDickCount = 0;
         double totalFrameCount = 0;
         double frameNum = 0;
+        int selectedMode = 0;
+        int roiView = 0;
         frameInfo _frameInfo;
         List<frameInfo> frameList = new List<frameInfo>();
         videoPlayer player;
-
+        VideoWriter writer;
         Stopwatch timer = new Stopwatch();
 
         public Form2()
@@ -40,15 +42,16 @@ namespace Prototype2
             InitializeComponent();
         }
 
-        public Form2(string file)
+        public Form2(string file, int selectedMode, int roiView)
         {
             InitializeComponent();
             _file = file;
+            this.selectedMode = selectedMode;
+            this.roiView = roiView;
             CvInvoke.UseOpenCL = false;
             try
             {
                 frameProcessing();
-                
             }
             catch (NullReferenceException excpt)
             {
@@ -85,32 +88,57 @@ namespace Prototype2
                 {
                     CvInvoke.CvtColor(frame, ugray, Emgu.CV.CvEnum.ColorConversion.Bgr2Gray);
                     CvInvoke.EqualizeHist(ugray, ugray);
-                    Rectangle[] breastDetected = cascadeBreast.DetectMultiScale(
-                       ugray,
-                       1.1,
-                       30,
-                       new Size(20, 20));
-                    Rectangle[] pussyDetected = cascadePuss.DetectMultiScale(
-                       ugray,
-                       1.1,
-                       30,
-                       new Size(20, 20));
-                    Rectangle[] dickDetected = cascadePen.DetectMultiScale(
-                       ugray,
-                       1.1,
-                       35,
-                       new Size(20, 20));
-                    if (breastDetected.Count() > 0)
-                        _frameInfo.boobDetected = true;
-                    if (pussyDetected.Count() > 0)
-                        _frameInfo.pussDetected = true;
-                    if (dickDetected.Count() > 0)
-                        _frameInfo.penDetected = true;
+                    Rectangle[] breastDetected;
+                    Rectangle[] pussyDetected;
+                    Rectangle[] dickDetected;
+                    if (selectedMode == 0 || selectedMode == 1)
+                    {
+                        breastDetected = cascadeBreast.DetectMultiScale(
+                        ugray,
+                        1.1,
+                        30,
+                        new Size(20, 20));
+                        if (breastDetected.Count() > 0)
+                            _frameInfo.boobDetected = true;
+                    }
+                    if (selectedMode == 0 || selectedMode == 2)
+                    {
+                        pussyDetected = cascadePuss.DetectMultiScale(
+                        ugray,
+                        1.1,
+                        30,
+                        new Size(20, 20));
+                        if (pussyDetected.Count() > 0)
+                            _frameInfo.pussDetected = true;
+                    }
+                    if (selectedMode == 0 || selectedMode == 3)
+                    {
+                        dickDetected = cascadePen.DetectMultiScale(
+                           ugray,
+                           1.1,
+                           35,
+                           new Size(20, 20));
+                        if (dickDetected.Count() > 0)
+                            _frameInfo.penDetected = true;
+                    }
                     if (_frameInfo.boobDetected || _frameInfo.pussDetected || _frameInfo.penDetected)
                         frameList.Add(_frameInfo);
                     progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
-                }   
+                }
+                if (roiView > 0)
+                {
+                    try
+                    {
+                        writer.Write(frame);
+                    }
+                    catch(Exception exception)
+                    {
+                        MessageBox.Show(exception.ToString());
+                    }
+                    
+                }
             }
+            
             if (frameNum == totalFrameCount)
             {
                 progressBar1.Invoke(new MethodInvoker(delegate { button2.Enabled = true; }));

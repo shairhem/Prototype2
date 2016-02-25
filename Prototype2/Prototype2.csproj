@@ -126,6 +126,12 @@
     <Compile Include="videoPlayer.Designer.cs">
       <DependentUpon>videoPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="videoPlayerv2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="videoPlayerv2.Designer.cs">
+      <DependentUpon>videoPlayerv2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,9 +152,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="videoPlayer.resx">
       <DependentUpon>videoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="videoPlayerv2.resx">
+      <DependentUpon>videoPlayerv2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -164,6 +174,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\x86\Debug\Resources\widget_pause_pressed.png" />
+    <None Include="bin\x86\Debug\Resources\widget_play_pressed.png" />
     <Content Include="cascade.xml" />
   </ItemGroup>
   <ItemGroup>
