@@ -61,6 +61,247 @@ namespace Prototype2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;cascade&gt;
+        ///  &lt;stageType&gt;BOOST&lt;/stageType&gt;
+        ///  &lt;featureType&gt;HAAR&lt;/featureType&gt;
+        ///  &lt;height&gt;30&lt;/height&gt;
+        ///  &lt;width&gt;30&lt;/width&gt;
+        ///  &lt;stageParams&gt;
+        ///    &lt;boostType&gt;GAB&lt;/boostType&gt;
+        ///    &lt;minHitRate&gt;9.9500000476837158e-001&lt;/minHitRate&gt;
+        ///    &lt;maxFalseAlarm&gt;5.0000000000000000e-001&lt;/maxFalseAlarm&gt;
+        ///    &lt;weightTrimRate&gt;9.4999999999999996e-001&lt;/weightTrimRate&gt;
+        ///    &lt;maxDepth&gt;1&lt;/maxDepth&gt;
+        ///    &lt;maxWeakCount&gt;100&lt;/maxWeakCount&gt;&lt;/stageParams&gt;
+        ///  &lt;featureParams&gt;
+        ///    &lt;maxCatCount&gt;0&lt;/maxCa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string cascade_breast {
+            get {
+                return ResourceManager.GetString("cascade_breast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;cascade&gt;
+        ///  &lt;stageType&gt;BOOST&lt;/stageType&gt;
+        ///  &lt;featureType&gt;HAAR&lt;/featureType&gt;
+        ///  &lt;height&gt;30&lt;/height&gt;
+        ///  &lt;width&gt;30&lt;/width&gt;
+        ///  &lt;stageParams&gt;
+        ///    &lt;boostType&gt;GAB&lt;/boostType&gt;
+        ///    &lt;minHitRate&gt;9.9500000476837158e-001&lt;/minHitRate&gt;
+        ///    &lt;maxFalseAlarm&gt;5.0000000000000000e-001&lt;/maxFalseAlarm&gt;
+        ///    &lt;weightTrimRate&gt;9.4999999999999996e-001&lt;/weightTrimRate&gt;
+        ///    &lt;maxDepth&gt;1&lt;/maxDepth&gt;
+        ///    &lt;maxWeakCount&gt;100&lt;/maxWeakCount&gt;&lt;/stageParams&gt;
+        ///  &lt;featureParams&gt;
+        ///    &lt;maxCatCount&gt;0&lt;/maxCa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string cascade_dick {
+            get {
+                return ResourceManager.GetString("cascade_dick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;cascade&gt;
+        ///  &lt;stageType&gt;BOOST&lt;/stageType&gt;
+        ///  &lt;featureType&gt;HAAR&lt;/featureType&gt;
+        ///  &lt;height&gt;30&lt;/height&gt;
+        ///  &lt;width&gt;30&lt;/width&gt;
+        ///  &lt;stageParams&gt;
+        ///    &lt;boostType&gt;GAB&lt;/boostType&gt;
+        ///    &lt;minHitRate&gt;9.9500000476837158e-001&lt;/minHitRate&gt;
+        ///    &lt;maxFalseAlarm&gt;5.0000000000000000e-001&lt;/maxFalseAlarm&gt;
+        ///    &lt;weightTrimRate&gt;9.4999999999999996e-001&lt;/weightTrimRate&gt;
+        ///    &lt;maxDepth&gt;1&lt;/maxDepth&gt;
+        ///    &lt;maxWeakCount&gt;100&lt;/maxWeakCount&gt;&lt;/stageParams&gt;
+        ///  &lt;featureParams&gt;
+        ///    &lt;maxCatCount&gt;0&lt;/maxCa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string cascade_pen {
+            get {
+                return ResourceManager.GetString("cascade_pen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;cascade&gt;
+        ///  &lt;stageType&gt;BOOST&lt;/stageType&gt;
+        ///  &lt;featureType&gt;HAAR&lt;/featureType&gt;
+        ///  &lt;height&gt;30&lt;/height&gt;
+        ///  &lt;width&gt;30&lt;/width&gt;
+        ///  &lt;stageParams&gt;
+        ///    &lt;boostType&gt;GAB&lt;/boostType&gt;
+        ///    &lt;minHitRate&gt;9.9500000476837158e-001&lt;/minHitRate&gt;
+        ///    &lt;maxFalseAlarm&gt;5.0000000000000000e-001&lt;/maxFalseAlarm&gt;
+        ///    &lt;weightTrimRate&gt;9.4999999999999996e-001&lt;/weightTrimRate&gt;
+        ///    &lt;maxDepth&gt;1&lt;/maxDepth&gt;
+        ///    &lt;maxWeakCount&gt;100&lt;/maxWeakCount&gt;&lt;/stageParams&gt;
+        ///  &lt;featureParams&gt;
+        ///    &lt;maxCatCount&gt;0&lt;/maxCa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string cascade_pussy {
+            get {
+                return ResourceManager.GetString("cascade_pussy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;haarcascade_left_boob_2 type_id=&quot;opencv-haar-classifier&quot;&gt;
+        ///  &lt;size&gt;
+        ///    50 50&lt;/size&gt;
+        ///  &lt;stages&gt;
+        ///    &lt;_&gt;
+        ///      &lt;!-- stage 0 --&gt;
+        ///      &lt;trees&gt;
+        ///        &lt;_&gt;
+        ///          &lt;!-- tree 0 --&gt;
+        ///          &lt;_&gt;
+        ///            &lt;!-- root node --&gt;
+        ///            &lt;feature&gt;
+        ///              &lt;rects&gt;
+        ///                &lt;_&gt;
+        ///                  16 30 4 10 -1.&lt;/_&gt;
+        ///                &lt;_&gt;
+        ///                  16 35 4 5 2.&lt;/_&gt;&lt;/rects&gt;
+        ///              &lt;tilted&gt;0&lt;/tilted&gt;&lt;/feature&gt;
+        ///            &lt;threshold [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string haarcascade_left_boob_2 {
+            get {
+                return ResourceManager.GetString("haarcascade_left_boob_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;haarcascade-penis_h_20 type_id=&quot;opencv-haar-classifier&quot;&gt;
+        ///  &lt;size&gt;
+        ///    75 35&lt;/size&gt;
+        ///  &lt;stages&gt;
+        ///    &lt;_&gt;
+        ///      &lt;!-- stage 0 --&gt;
+        ///      &lt;trees&gt;
+        ///        &lt;_&gt;
+        ///          &lt;!-- tree 0 --&gt;
+        ///          &lt;_&gt;
+        ///            &lt;!-- root node --&gt;
+        ///            &lt;feature&gt;
+        ///              &lt;rects&gt;
+        ///                &lt;_&gt;
+        ///                  23 4 44 26 -1.&lt;/_&gt;
+        ///                &lt;_&gt;
+        ///                  23 17 44 13 2.&lt;/_&gt;&lt;/rects&gt;
+        ///              &lt;tilted&gt;0&lt;/tilted&gt;&lt;/feature&gt;
+        ///            &lt;threshol [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string haarcascade_penis_h_20 {
+            get {
+                return ResourceManager.GetString("haarcascade_penis_h_20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;haarcascade_right_boob_1 type_id=&quot;opencv-haar-classifier&quot;&gt;
+        ///  &lt;size&gt;
+        ///    50 50&lt;/size&gt;
+        ///  &lt;stages&gt;
+        ///    &lt;_&gt;
+        ///      &lt;!-- stage 0 --&gt;
+        ///      &lt;trees&gt;
+        ///        &lt;_&gt;
+        ///          &lt;!-- tree 0 --&gt;
+        ///          &lt;_&gt;
+        ///            &lt;!-- root node --&gt;
+        ///            &lt;feature&gt;
+        ///              &lt;rects&gt;
+        ///                &lt;_&gt;
+        ///                  27 29 12 12 -1.&lt;/_&gt;
+        ///                &lt;_&gt;
+        ///                  27 35 12 6 2.&lt;/_&gt;&lt;/rects&gt;
+        ///              &lt;tilted&gt;0&lt;/tilted&gt;&lt;/feature&gt;
+        ///            &lt;thresh [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string haarcascade_right_boob_1 {
+            get {
+                return ResourceManager.GetString("haarcascade_right_boob_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;haarcascade_vagina_1 type_id=&quot;opencv-haar-classifier&quot;&gt;
+        ///  &lt;size&gt;
+        ///    30 60&lt;/size&gt;
+        ///  &lt;stages&gt;
+        ///    &lt;_&gt;
+        ///      &lt;!-- stage 0 --&gt;
+        ///      &lt;trees&gt;
+        ///        &lt;_&gt;
+        ///          &lt;!-- tree 0 --&gt;
+        ///          &lt;_&gt;
+        ///            &lt;!-- root node --&gt;
+        ///            &lt;feature&gt;
+        ///              &lt;rects&gt;
+        ///                &lt;_&gt;
+        ///                  0 13 8 43 -1.&lt;/_&gt;
+        ///                &lt;_&gt;
+        ///                  4 13 4 43 2.&lt;/_&gt;&lt;/rects&gt;
+        ///              &lt;tilted&gt;0&lt;/tilted&gt;&lt;/feature&gt;
+        ///            &lt;threshold&gt;-1. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string haarcascade_vagina_1 {
+            get {
+                return ResourceManager.GetString("haarcascade_vagina_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;opencv_storage&gt;
+        ///&lt;haarcascade_18 type_id=&quot;opencv-haar-classifier&quot;&gt;
+        ///  &lt;size&gt;
+        ///    40 40&lt;/size&gt;
+        ///  &lt;stages&gt;
+        ///    &lt;_&gt;
+        ///      &lt;!-- stage 0 --&gt;
+        ///      &lt;trees&gt;
+        ///        &lt;_&gt;
+        ///          &lt;!-- tree 0 --&gt;
+        ///          &lt;_&gt;
+        ///            &lt;!-- root node --&gt;
+        ///            &lt;feature&gt;
+        ///              &lt;rects&gt;
+        ///                &lt;_&gt;
+        ///                  8 23 9 8 -1.&lt;/_&gt;
+        ///                &lt;_&gt;
+        ///                  8 23 9 4 2.&lt;/_&gt;&lt;/rects&gt;
+        ///              &lt;tilted&gt;1&lt;/tilted&gt;&lt;/feature&gt;
+        ///            &lt;threshold&gt;-2.34736707 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string haarcascade_vagina_front18 {
+            get {
+                return ResourceManager.GetString("haarcascade_vagina_front18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap widget_pause_pressed {

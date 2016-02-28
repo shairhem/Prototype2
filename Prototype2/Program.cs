@@ -9,7 +9,7 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.Cuda;
-
+using System.IO;
 namespace Prototype2
 {
     static class Program
@@ -27,7 +27,14 @@ namespace Prototype2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ItemSelectForm());
+            //Console.WriteLine(File.Exists("model/cascade_breast.xml"));
 
+            //detectInfo detect = new detectInfo();
+            //Console.WriteLine(detect.bnn);
+            //Console.WriteLine(detect.fnn);
+            //Console.WriteLine(detect.dnn);
+            //Console.WriteLine(detect.boxDim);
+            //Console.ReadKey();
             /*
             string file = " ";
             char[] trim = new char[1] { '"' };

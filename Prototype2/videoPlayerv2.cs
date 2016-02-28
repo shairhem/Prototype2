@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
-//emgu
+﻿//emgu
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.Util;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace Prototype2
@@ -28,7 +28,7 @@ namespace Prototype2
         //list
         List<frameInfo> frameInfoList;
         List<frameInfo> list = new List<frameInfo>();
-
+        List<recInfo> recInfoList = new List<recInfo>();
         //shapes
         Rectangle[] boobs = null;
         Rectangle[] pussy = null;
@@ -49,11 +49,14 @@ namespace Prototype2
             }
         }
 
-        public videoPlayerv2(string file, List<frameInfo> frameInfoList,int roiView)
+        public videoPlayerv2(string file, List<frameInfo> frameInfoList,int roiView,List<recInfo> recInfoList)
         {
             InitializeComponent();
             this.file = file;
             this.frameInfoList = frameInfoList;
+            this.recInfoList = recInfoList;
+            this.roiView = roiView;
+            //Console.WriteLine(recInfoList.Count);
             try
             {
                 frameProcessing();
@@ -68,6 +71,7 @@ namespace Prototype2
         {
             _capture = new Capture(file);
             totalFrames = (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameCount);
+            //Console.WriteLine(totalFrames);
             fps = (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
             fillDataGrid(frameInfoList, fps, totalFrames);
             Video_CNTRL.Minimum = 0;
@@ -112,11 +116,6 @@ namespace Prototype2
         {
             try
             {                
-                //display image
-                Mat frame = new Mat();
-                _capture.Retrieve(frame,0);
-                DisplayImage(frame);
-                
                 //show time stamp
                 double timeIndex = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec);
                 updateTextBox("Time: " + TimeSpan.FromMilliseconds(timeIndex).ToString(), label1);
@@ -124,6 +123,11 @@ namespace Prototype2
                 //show frame number
                 double framenumber = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames);
                 updateTextBox("Frame: " + framenumber.ToString(), label2);
+
+                //display image
+                Mat frame = new Mat();
+                _capture.Retrieve(frame, 0);
+                DisplayImage(frame,(int)framenumber);
 
                 double frameRate = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
 
@@ -147,60 +151,131 @@ namespace Prototype2
             }
             catch { }
         }
-
-        private delegate void DisplayImageDelegate(Mat frame);
-        private void DisplayImage(Mat frame)
+        recInfo temp;
+        private delegate void DisplayImageDelegate(Mat frame, int frameNum);
+        private void DisplayImage(Mat frame,int frameNum)
         {
             if (imageBox1.InvokeRequired)
             {
                 try
                 {
                     DisplayImageDelegate DI = new DisplayImageDelegate(DisplayImage);
-                    this.BeginInvoke(DI, new object[] { frame });
+                    this.BeginInvoke(DI, new object[] { frame,frameNum });
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.ToString());
                 }
             }
             else
             {
-                if(roiView == 0)
-                    imageBox1.Image = frame;
-                else if(roiView == 1)
+                if(roiView > 0)
                 {
-                    foreach (Rectangle b in boobs)
-                    {
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
-                    }
-                    foreach (Rectangle b in dick)
-                    {
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 2);
-                    }
-                    foreach (Rectangle b in pussy)
-                    {
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 2);
-                    }
-                    imageBox1.Image = frame;
+                    //MessageBox.Show(recInfoList.First().frameNum + " " + frameNum);
+                    if (recInfoList != null)
+                        try
+                        {
+                            if (frameExist(frameNum))
+                            {
+                                temp = recInfoList.ElementAt(loc);
+                                Console.WriteLine(frameNum + " " + temp.frameNum + " " + loc);
+                                if (roiView == 1)
+                                {
+                                    if (temp.boobsLeft != null)
+                                    {
+                                        //Console.WriteLine(temp.frameNum + " " + temp.boobs.First().Location + " " + temp.boobs.First().Size);
+                                        foreach (Rectangle b in temp.boobsLeft)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
+                                        }
+                                    }
+                                    if (temp.boobsRight != null)
+                                    {
+                                        //Console.WriteLine(temp.frameNum + " " + temp.boobs.First().Location + " " + temp.boobs.First().Size);
+                                        foreach (Rectangle b in temp.boobsRight)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
+                                        }
+                                    }
+                                    if (temp.boobs != null)
+                                    {
+                                        //Console.WriteLine(temp.frameNum + " " + temp.boobs.First().Location + " " + temp.boobs.First().Size);
+                                        foreach (Rectangle b in temp.boobs)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
+                                        }
+                                    }
+                                    if (temp.pussy != null)
+                                    {
+                                        foreach (Rectangle b in temp.pussy)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 2);
+                                        }
+                                    }
+                                    if (temp.dick != null)
+                                    {
+                                        foreach (Rectangle b in temp.dick)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 2);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (temp.boobsLeft != null)
+                                    {
+                                        foreach (Rectangle b in temp.boobsLeft)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Black).MCvScalar, -2);
+                                        }
+                                    }
+                                    if (temp.boobsRight != null)
+                                    {
+                                        foreach (Rectangle b in temp.boobsRight)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Black).MCvScalar, -2);
+                                        }
+                                    }
+                                    if (temp.pussy != null)
+                                    {
+                                        foreach (Rectangle b in temp.pussy)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Black).MCvScalar, -2);
+                                        }
+                                    }
+                                    if (temp.dick != null)
+                                    {
+                                        foreach (Rectangle b in temp.dick)
+                                        {
+                                            CvInvoke.Rectangle(frame, b, new Bgr(Color.Black).MCvScalar, -2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        catch(Exception excpt)
+                        {
+                            MessageBox.Show(excpt.Message + frameNum);
+                        }
                 }
-                else
-                {
-
-                    foreach (Rectangle b in boobs)
-                    {
-                        
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 0);
-                    }
-                    foreach (Rectangle b in dick)
-                    {
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 0);
-                    }
-                    foreach (Rectangle b in pussy)
-                    {
-                        CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 0);
-                    }
-                    imageBox1.Image = frame;
-                }
+                imageBox1.Image = frame;
             }
+        }
+        int loc = 0;
+        private bool frameExist(int frameNum)
+        {
+            bool temp = false;
+            int x = 0;
+            foreach(recInfo d in recInfoList)
+            {
+                if (d.frameNum == frameNum)
+                {
+                    temp = true;
+                    loc = x;
+                }
+                x++;
+            }
+            return temp;
         }
 
         private delegate void updateTextBoxDelegate(String Text, Label Control);
@@ -215,6 +290,7 @@ namespace Prototype2
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.ToString());
                 }
             }
             else
@@ -237,6 +313,7 @@ namespace Prototype2
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.ToString());
                 }
             }
             else
@@ -261,6 +338,7 @@ namespace Prototype2
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.ToString());
                 }
             }
             else

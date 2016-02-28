@@ -52,7 +52,7 @@ namespace Prototype2
             int nn = 25;
             double rescale = 1.0;
             //Form1 testMode;
-            videoPlayerv2 testMode;
+            Form1 testMode;
             Form2 stndMode;
             if (file.EndsWith(".mkv") || file.EndsWith(".mp4") || file.EndsWith(".avi"))
             {
@@ -81,7 +81,7 @@ namespace Prototype2
                     return;
                 if (radioButton1.Checked)
                 {
-                    testMode = new videoPlayerv2(file,null);
+                    testMode = new Form1(file,0,0);
                     testMode.Show();
                 }
                 else
@@ -172,6 +172,73 @@ namespace Prototype2
                 checkBox3.Enabled = false;
             else
                 checkBox3.Enabled = true;
+        }
+
+        private void model1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("boobModel","1");
+            MessageBox.Show("changed boob model to model 1");
+        }
+
+        private void model2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("boobModel", "2");
+            MessageBox.Show("changed boob model to model 2");
+        }
+
+        private void model1ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("pussyModel", "1");
+            MessageBox.Show("changed pussy model to model 1");
+        }
+
+        private void model2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("pussyModel", "2");
+            MessageBox.Show("changed pussy model to model 2");
+        }
+
+        private void model1ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("dickModel", "1");
+            MessageBox.Show("changed dick model to model 1");
+        }
+
+        private void model2ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("dickModel", "2");
+            MessageBox.Show("changed dick model to model 2");
+        }
+
+        private void bnnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            itemBrowser itm = new itemBrowser("bnn");
+            itm.Show();
+        }
+
+        private void fnnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            itemBrowser itm = new itemBrowser("fnn");
+            itm.Show();
+        }
+
+        private void gnnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            itemBrowser itm = new itemBrowser("gnn");
+            itm.Show();
+        }
+
+        private void model3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            detect.writeConfig("pussyModel", "3");
+            MessageBox.Show("changed pussy model to model 3");
         }
     }
 }

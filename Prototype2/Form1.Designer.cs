@@ -111,7 +111,6 @@
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Logs:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // fileSystemWatcher1
             // 

@@ -11,7 +11,6 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.Util;
-using System.IO;
 
 namespace Prototype2
 {
@@ -19,9 +18,9 @@ namespace Prototype2
     {
         private Capture _capture = null;
         private bool _captureInProgress;
-        private CascadeClassifier cascadeBreast = new CascadeClassifier("models/cascade_breast.xml");
-        private CascadeClassifier cascadePuss = new CascadeClassifier("models/cascade_pussy.xml");
-        private CascadeClassifier cascadePen = new CascadeClassifier("models/cascade_pen.xml");
+        private CascadeClassifier cascadeBreast = new CascadeClassifier("cascade_pussy.xml".ToString());
+        private CascadeClassifier cascadePuss = new CascadeClassifier("cascade_pussy.xml".ToString());
+        private CascadeClassifier cascadePen = new CascadeClassifier("cascade_pen.xml".ToString());
         public int totalBreastCount = 0;
         public int totalPussyCount = 0;
         public int totalDickCount = 0;
@@ -32,21 +31,21 @@ namespace Prototype2
         int frameCtr = 0;
         int _nn = 0;
         double _rescale = 1.0;
-        StreamWriter writer;
 
         public Form1()
         {
             InitializeComponent();
         }
-        public Form1(string file,int frameskip, double rescale,int nn)
+        public Form1(string file,int frameskip, double rescale)
         {
             InitializeComponent();
+            detectInfo detect = new detectInfo();
             //reset.Hide();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             _file = file;
             _frameskip = frameskip;
             _rescale = rescale;
-            _nn = nn;
+            _nn = detect.dnn;
             CvInvoke.UseOpenCL = false;
             try
             {
@@ -74,7 +73,7 @@ namespace Prototype2
             string temp = "";
             _capture.Retrieve(frame, 0);
             frame1 = frame.ToImage<Bgr, Byte>();
-            frame1 = frame1.Resize(_rescale, Emgu.CV.CvEnum.Inter.Cubic);
+            //frame1 = frame1.Resize(_rescale, Emgu.CV.CvEnum.Inter.Cubic);
             frame = frame1.Mat;
             //MessageBox.Show(_nn.ToString());
             if (frame != null && frameCtr == _frameskip)
@@ -89,7 +88,7 @@ namespace Prototype2
                        1.1,
                        _nn,
                        new Size(20, 20));
-                    Rectangle[] pussyDetected = cascadePuss.DetectMultiScale(
+                    /*Rectangle[] pussyDetected = cascadePuss.DetectMultiScale(
                        ugray,
                        1.1,
                        _nn,
@@ -98,12 +97,11 @@ namespace Prototype2
                        ugray,
                        1.1,
                        50,
-                       new Size(20, 20));
+                       new Size(20, 20));*/
                     foreach (Rectangle b in breastDetected)
                     {
                         CvInvoke.Rectangle(frame, b, new Bgr(Color.Red).MCvScalar, 2);
-                        
-                    }
+                    }/*
                     foreach (Rectangle b in pussyDetected)
                     {
                         CvInvoke.Rectangle(frame, b, new Bgr(Color.Blue).MCvScalar, 2);
@@ -111,10 +109,10 @@ namespace Prototype2
                     foreach (Rectangle b in dickDetected)
                     {
                         CvInvoke.Rectangle(frame, b, new Bgr(Color.Green).MCvScalar, 2);
-                    }
+                    }*/
                      breastCount = breastDetected.Length;
-                     pussyCount = pussyDetected.Length;
-                     dickCount = dickDetected.Length;
+                     //pussyCount = pussyDetected.Length;
+                     //dickCount = dickDetected.Length;
                      totalBreastCount += breastCount;
                      totalPussyCount += pussyCount;
                      totalDickCount += dickCount;
@@ -190,7 +188,7 @@ namespace Prototype2
             MessageBoxDefaultButton.Button1);
             _capture.Dispose();
 
-        }
+        }/*
         private void label5_Click(object sender, EventArgs e)
         {
             string temp = "";
@@ -215,7 +213,7 @@ namespace Prototype2
                 writer.Close();
                 MessageBox.Show("Log saved");
             }
-        }
+        }*/
 
        
     }

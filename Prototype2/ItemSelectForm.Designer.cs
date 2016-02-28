@@ -44,12 +44,30 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boobsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.model1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.model2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pussyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.model1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.model2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.model3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.model1ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.model2ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.setVariableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.AllowDrop = true;
-            this.textBox1.Location = new System.Drawing.Point(13, 30);
+            this.textBox1.Location = new System.Drawing.Point(13, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 20);
             this.textBox1.TabIndex = 0;
@@ -58,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 11);
+            this.label1.Location = new System.Drawing.Point(13, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 1;
@@ -70,7 +88,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(201, 172);
+            this.button1.Location = new System.Drawing.Point(201, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -81,7 +99,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(30, 73);
+            this.radioButton1.Location = new System.Drawing.Point(30, 87);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(76, 17);
             this.radioButton1.TabIndex = 3;
@@ -93,7 +111,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(30, 96);
+            this.radioButton2.Location = new System.Drawing.Point(30, 110);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(98, 17);
             this.radioButton2.TabIndex = 4;
@@ -105,7 +123,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(178, 69);
+            this.checkBox1.Location = new System.Drawing.Point(178, 83);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(74, 17);
             this.checkBox1.TabIndex = 5;
@@ -124,7 +142,7 @@
             "20",
             "25",
             "30"});
-            this.comboBox1.Location = new System.Drawing.Point(201, 85);
+            this.comboBox1.Location = new System.Drawing.Point(201, 99);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(50, 21);
             this.comboBox1.TabIndex = 6;
@@ -132,7 +150,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(178, 112);
+            this.checkBox2.Location = new System.Drawing.Point(178, 126);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(118, 17);
             this.checkBox2.TabIndex = 7;
@@ -151,7 +169,7 @@
             "0.6",
             "0.5",
             "0.4"});
-            this.comboBox2.Location = new System.Drawing.Point(201, 127);
+            this.comboBox2.Location = new System.Drawing.Point(201, 141);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(51, 21);
             this.comboBox2.TabIndex = 8;
@@ -160,7 +178,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Enabled = false;
-            this.checkBox3.Location = new System.Drawing.Point(41, 119);
+            this.checkBox3.Location = new System.Drawing.Point(41, 133);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(131, 17);
             this.checkBox3.TabIndex = 10;
@@ -172,7 +190,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Enabled = false;
-            this.checkBox4.Location = new System.Drawing.Point(41, 136);
+            this.checkBox4.Location = new System.Drawing.Point(41, 150);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(109, 17);
             this.checkBox4.TabIndex = 11;
@@ -188,7 +206,7 @@
             "Breast",
             "Female Genital",
             "Male Genital"});
-            this.comboBox3.Location = new System.Drawing.Point(30, 172);
+            this.comboBox3.Location = new System.Drawing.Point(30, 186);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(109, 21);
             this.comboBox3.TabIndex = 12;
@@ -196,18 +214,155 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 156);
+            this.label2.Location = new System.Drawing.Point(27, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "part to detect: ";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(307, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectModelToolStripMenuItem,
+            this.setVariableToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // selectModelToolStripMenuItem
+            // 
+            this.selectModelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.boobsToolStripMenuItem,
+            this.pussyToolStripMenuItem,
+            this.penisToolStripMenuItem});
+            this.selectModelToolStripMenuItem.Name = "selectModelToolStripMenuItem";
+            this.selectModelToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.selectModelToolStripMenuItem.Text = "select model";
+            // 
+            // boobsToolStripMenuItem
+            // 
+            this.boobsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.model1ToolStripMenuItem,
+            this.model2ToolStripMenuItem});
+            this.boobsToolStripMenuItem.Name = "boobsToolStripMenuItem";
+            this.boobsToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.boobsToolStripMenuItem.Text = "boobs";
+            // 
+            // model1ToolStripMenuItem
+            // 
+            this.model1ToolStripMenuItem.Name = "model1ToolStripMenuItem";
+            this.model1ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.model1ToolStripMenuItem.Text = "model 1";
+            this.model1ToolStripMenuItem.Click += new System.EventHandler(this.model1ToolStripMenuItem_Click);
+            // 
+            // model2ToolStripMenuItem
+            // 
+            this.model2ToolStripMenuItem.Name = "model2ToolStripMenuItem";
+            this.model2ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.model2ToolStripMenuItem.Text = "model 2";
+            this.model2ToolStripMenuItem.Click += new System.EventHandler(this.model2ToolStripMenuItem_Click);
+            // 
+            // pussyToolStripMenuItem
+            // 
+            this.pussyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.model1ToolStripMenuItem1,
+            this.model2ToolStripMenuItem1,
+            this.model3ToolStripMenuItem});
+            this.pussyToolStripMenuItem.Name = "pussyToolStripMenuItem";
+            this.pussyToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.pussyToolStripMenuItem.Text = "pussy";
+            // 
+            // model1ToolStripMenuItem1
+            // 
+            this.model1ToolStripMenuItem1.Name = "model1ToolStripMenuItem1";
+            this.model1ToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.model1ToolStripMenuItem1.Text = "model 1";
+            this.model1ToolStripMenuItem1.Click += new System.EventHandler(this.model1ToolStripMenuItem1_Click);
+            // 
+            // model2ToolStripMenuItem1
+            // 
+            this.model2ToolStripMenuItem1.Name = "model2ToolStripMenuItem1";
+            this.model2ToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.model2ToolStripMenuItem1.Text = "model 2";
+            this.model2ToolStripMenuItem1.Click += new System.EventHandler(this.model2ToolStripMenuItem1_Click);
+            // 
+            // model3ToolStripMenuItem
+            // 
+            this.model3ToolStripMenuItem.Name = "model3ToolStripMenuItem";
+            this.model3ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.model3ToolStripMenuItem.Text = "model 3";
+            this.model3ToolStripMenuItem.Click += new System.EventHandler(this.model3ToolStripMenuItem_Click);
+            // 
+            // penisToolStripMenuItem
+            // 
+            this.penisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.model1ToolStripMenuItem2,
+            this.model2ToolStripMenuItem2});
+            this.penisToolStripMenuItem.Name = "penisToolStripMenuItem";
+            this.penisToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.penisToolStripMenuItem.Text = "penis";
+            // 
+            // model1ToolStripMenuItem2
+            // 
+            this.model1ToolStripMenuItem2.Name = "model1ToolStripMenuItem2";
+            this.model1ToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.model1ToolStripMenuItem2.Text = "model 1";
+            this.model1ToolStripMenuItem2.Click += new System.EventHandler(this.model1ToolStripMenuItem2_Click);
+            // 
+            // model2ToolStripMenuItem2
+            // 
+            this.model2ToolStripMenuItem2.Name = "model2ToolStripMenuItem2";
+            this.model2ToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.model2ToolStripMenuItem2.Text = "model 2";
+            this.model2ToolStripMenuItem2.Click += new System.EventHandler(this.model2ToolStripMenuItem2_Click);
+            // 
+            // setVariableToolStripMenuItem
+            // 
+            this.setVariableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bnnToolStripMenuItem,
+            this.fnnToolStripMenuItem,
+            this.gnnToolStripMenuItem});
+            this.setVariableToolStripMenuItem.Name = "setVariableToolStripMenuItem";
+            this.setVariableToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.setVariableToolStripMenuItem.Text = "Set variable";
+            // 
+            // bnnToolStripMenuItem
+            // 
+            this.bnnToolStripMenuItem.Name = "bnnToolStripMenuItem";
+            this.bnnToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.bnnToolStripMenuItem.Text = "bnn";
+            this.bnnToolStripMenuItem.Click += new System.EventHandler(this.bnnToolStripMenuItem_Click);
+            // 
+            // fnnToolStripMenuItem
+            // 
+            this.fnnToolStripMenuItem.Name = "fnnToolStripMenuItem";
+            this.fnnToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.fnnToolStripMenuItem.Text = "fnn";
+            this.fnnToolStripMenuItem.Click += new System.EventHandler(this.fnnToolStripMenuItem_Click);
+            // 
+            // gnnToolStripMenuItem
+            // 
+            this.gnnToolStripMenuItem.Name = "gnnToolStripMenuItem";
+            this.gnnToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.gnnToolStripMenuItem.Text = "gnn";
+            this.gnnToolStripMenuItem.Click += new System.EventHandler(this.gnnToolStripMenuItem_Click);
             // 
             // ItemSelectForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 204);
+            this.ClientSize = new System.Drawing.Size(307, 229);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.checkBox4);
@@ -221,10 +376,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +407,22 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectModelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem boobsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pussyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem penisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setVariableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bnnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fnnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gnnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem model1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem model2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem model1ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem model2ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem model1ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem model2ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem model3ToolStripMenuItem;
     }
 }
