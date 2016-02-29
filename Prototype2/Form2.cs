@@ -61,6 +61,7 @@ namespace Prototype2
             _file = file;
             this.selectedMode = selectedMode;
             this.roiView = roiView;
+            this.Text = file;
             CvInvoke.UseOpenCL = false;
             try
             {
@@ -314,6 +315,15 @@ namespace Prototype2
                 player = new videoPlayerv2(_file, frameList, roiView,recList);
                 player.Show();
                 this.Close();
+            }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if(detect.readConfig("autoStart") == "1")
+            {
+                _capture.Start();
+                button1.Text = "Stop";
             }
         }
     }

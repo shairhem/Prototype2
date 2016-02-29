@@ -91,11 +91,18 @@ namespace Prototype2
                 {
                     temp = line.Split(':');
                     if (temp[0] == container)
+                    {
+                        reader.Close();
                         return temp[1];
+                    }
+                    
+
                 }
-                
+                reader.Close();
             }
             return "";
         }
     }
+
 }
+

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4BA12087-B1BC-4148-BD5C-763BD02895D5}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Prototype2</RootNamespace>
     <AssemblyName>Prototype2</AssemblyName>
@@ -232,6 +232,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\x86\Debug\model\cascade_pussy.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\widget_next_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\widget_previous_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matte_ff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

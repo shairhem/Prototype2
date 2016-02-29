@@ -24,6 +24,50 @@ namespace Prototype2
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             comboBox3.SelectedIndex = 0;
+            openFileDialog1.Multiselect = true;
+            checkInit();
+
+        }
+
+        private void checkInit()
+        {
+            detectInfo det = new detectInfo();
+
+            //uncheck all
+            model1ToolStripMenuItem.Checked = false;
+            model2ToolStripMenuItem.Checked = false;
+            model1ToolStripMenuItem1.Checked = false;
+            model2ToolStripMenuItem1.Checked = false;
+            model3ToolStripMenuItem.Checked = false;
+            model1ToolStripMenuItem2.Checked = false;
+            model2ToolStripMenuItem2.Checked = false;
+            autoStartToolStripMenuItem.Checked = false;
+
+            //get boob
+            string temp = det.readConfig("boobModel");
+            if (temp == "1")
+                model1ToolStripMenuItem.Checked = true;
+            else
+                model2ToolStripMenuItem.Checked = true;
+
+            temp = det.readConfig("pussyModel");
+            if (temp == "1")
+                model1ToolStripMenuItem1.Checked = true;
+            else if(temp == "2")
+                model2ToolStripMenuItem1.Checked = true;
+            else
+                model3ToolStripMenuItem.Checked = true;
+
+            temp = det.readConfig("dickModel");
+            if (temp == "1")
+                model1ToolStripMenuItem2.Checked = true;
+            else
+                model2ToolStripMenuItem2.Checked = true;
+            temp = det.readConfig("autoStart");
+            if (temp == "1")
+                autoStartToolStripMenuItem.Checked = true;
+            else
+                autoStartToolStripMenuItem.Checked = false;
         }
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
@@ -46,7 +90,22 @@ namespace Prototype2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string file = textBox1.Text;
+            if (openFileDialog1.FileNames.Count() > 1)
+            {
+                foreach (string x in openFileDialog1.FileNames)
+                {
+                    toForm2(x);
+                    //Console.WriteLine("1");
+                }
+            }
+            else
+                toForm2(textBox1.Text);
+            //Console.WriteLine("2");    
+        }
+
+        private void toForm2(string name)
+        {
+            string file = name;
             char[] trim = new char[1] { '"' };
             int frameskip = 0;
             int nn = 25;
@@ -81,7 +140,7 @@ namespace Prototype2
                     return;
                 if (radioButton1.Checked)
                 {
-                    testMode = new Form1(file,0,0);
+                    testMode = new Form1(file, 0, 0);
                     testMode.Show();
                 }
                 else
@@ -94,7 +153,7 @@ namespace Prototype2
                         roiView = 0;
 
                     //stndMode = new Form2(file);
-                    stndMode = new Form2(file, comboBox3.SelectedIndex,roiView);
+                    stndMode = new Form2(file, comboBox3.SelectedIndex, roiView);
                     stndMode.Show();
                 }
             }
@@ -179,6 +238,7 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("boobModel","1");
             MessageBox.Show("changed boob model to model 1");
+            checkInit();
         }
 
         private void model2ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,6 +246,7 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("boobModel", "2");
             MessageBox.Show("changed boob model to model 2");
+            checkInit();
         }
 
         private void model1ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -193,6 +254,7 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("pussyModel", "1");
             MessageBox.Show("changed pussy model to model 1");
+            checkInit();
         }
 
         private void model2ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -200,13 +262,16 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("pussyModel", "2");
             MessageBox.Show("changed pussy model to model 2");
+            checkInit();
         }
+        
 
         private void model1ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             detectInfo detect = new detectInfo();
             detect.writeConfig("dickModel", "1");
             MessageBox.Show("changed dick model to model 1");
+            checkInit();
         }
 
         private void model2ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -214,6 +279,7 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("dickModel", "2");
             MessageBox.Show("changed dick model to model 2");
+            checkInit();
         }
 
         private void bnnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -239,6 +305,23 @@ namespace Prototype2
             detectInfo detect = new detectInfo();
             detect.writeConfig("pussyModel", "3");
             MessageBox.Show("changed pussy model to model 3");
+        }
+
+        private void autoStartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            detectInfo detect = new detectInfo();
+            if (autoStartToolStripMenuItem.Checked)
+            {
+                detect.writeConfig("autoStart", "0");
+                MessageBox.Show("autocheck disabled");
+                checkInit();
+            }
+            else
+            {
+                detect.writeConfig("autoStart", "1");
+                MessageBox.Show("autocheck enabled");
+                checkInit();
+            }
         }
     }
 }

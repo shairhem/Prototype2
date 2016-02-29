@@ -304,6 +304,26 @@ namespace Prototype2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap matte_ff {
+            get {
+                object obj = ResourceManager.GetObject("matte_ff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap widget_next_pressed {
+            get {
+                object obj = ResourceManager.GetObject("widget_next_pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap widget_pause_pressed {
             get {
                 object obj = ResourceManager.GetObject("widget_pause_pressed", resourceCulture);
@@ -317,6 +337,16 @@ namespace Prototype2.Properties {
         internal static System.Drawing.Bitmap widget_play_pressed {
             get {
                 object obj = ResourceManager.GetObject("widget_play_pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap widget_previous_pressed {
+            get {
+                object obj = ResourceManager.GetObject("widget_previous_pressed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

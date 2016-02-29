@@ -25,10 +25,13 @@ namespace Prototype2
         private int fps = 0;
         private int totalFrames = 0;
         private int roiView = 0;
+        private int playSpeed = 1;
+        
         //list
         List<frameInfo> frameInfoList;
         List<frameInfo> list = new List<frameInfo>();
         List<recInfo> recInfoList = new List<recInfo>();
+        
         //shapes
         Rectangle[] boobs = null;
         Rectangle[] pussy = null;
@@ -39,6 +42,7 @@ namespace Prototype2
             InitializeComponent();
             this.file = file;
             this.frameInfoList = frameInfoList;
+            init(file);
             try
             {
                 frameProcessing();   
@@ -56,6 +60,7 @@ namespace Prototype2
             this.frameInfoList = frameInfoList;
             this.recInfoList = recInfoList;
             this.roiView = roiView;
+            init(file);
             //Console.WriteLine(recInfoList.Count);
             try
             {
@@ -65,6 +70,16 @@ namespace Prototype2
             {
                 MessageBox.Show(excpt.Message);
             }
+        }
+
+        public void init(string x)
+        {
+            detectInfo det = new detectInfo();
+            this.Text = x;
+
+            label4.Text += det.readConfig("boobModel");
+            label5.Text += det.readConfig("pussyModel");
+            label6.Text += det.readConfig("dickModel");
         }
 
         public void frameProcessing()
@@ -135,7 +150,7 @@ namespace Prototype2
                 UpdateVideo_CNTRL(framenumber);
 
                 //Wait to display correct framerate
-                Thread.Sleep((int)(1000.0 / frameRate));
+                Thread.Sleep((int)(1000.0 / frameRate)*playSpeed);
 
                 if (framenumber == totalFrames)
                 {
@@ -395,8 +410,46 @@ namespace Prototype2
             timeFrame = timeFrame * 1000;
             _capture.Pause();
             _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec, timeFrame);
-            _capture.Start();
             //MessageBox.Show(timeFrame.ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            switch(playSpeed)
+            {
+                case 1: playSpeed = 3;
+                    MessageBox.Show("playspeed: x0.5");  break;
+                case 2: playSpeed = 5;
+                    MessageBox.Show("playspeed: x0.75"); break;
+                case 3: playSpeed = 1;
+                    MessageBox.Show("playspeed: normal"); break;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double temp = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec);
+            _capture.Pause();
+            if (temp > 600)
+            {
+                temp = temp - 500;
+                _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec,temp);
+            }
+            _capture.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double temp = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec);
+            _capture.Pause();
+            double temp1 = (double)Decimal.Divide(totalFrames, fps)*1000;
+            //MessageBox.Show(temp1 + " " + temp);
+            if (500 < temp1-temp)
+            {
+                temp = temp + 500;
+                _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosMsec, temp);
+            }
+            _capture.Start();
         }
     }
 }

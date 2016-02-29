@@ -61,6 +61,7 @@
             this.bnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gnnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoStartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,7 +235,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectModelToolStripMenuItem,
-            this.setVariableToolStripMenuItem});
+            this.setVariableToolStripMenuItem,
+            this.autoStartToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -246,7 +248,7 @@
             this.pussyToolStripMenuItem,
             this.penisToolStripMenuItem});
             this.selectModelToolStripMenuItem.Name = "selectModelToolStripMenuItem";
-            this.selectModelToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.selectModelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.selectModelToolStripMenuItem.Text = "select model";
             // 
             // boobsToolStripMenuItem
@@ -333,7 +335,7 @@
             this.fnnToolStripMenuItem,
             this.gnnToolStripMenuItem});
             this.setVariableToolStripMenuItem.Name = "setVariableToolStripMenuItem";
-            this.setVariableToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.setVariableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.setVariableToolStripMenuItem.Text = "Set variable";
             // 
             // bnnToolStripMenuItem
@@ -356,6 +358,13 @@
             this.gnnToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.gnnToolStripMenuItem.Text = "gnn";
             this.gnnToolStripMenuItem.Click += new System.EventHandler(this.gnnToolStripMenuItem_Click);
+            // 
+            // autoStartToolStripMenuItem
+            // 
+            this.autoStartToolStripMenuItem.Name = "autoStartToolStripMenuItem";
+            this.autoStartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.autoStartToolStripMenuItem.Text = "Auto Start";
+            this.autoStartToolStripMenuItem.Click += new System.EventHandler(this.autoStartToolStripMenuItem_Click);
             // 
             // ItemSelectForm
             // 
@@ -382,6 +391,7 @@
             this.MinimizeBox = false;
             this.Name = "ItemSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Item Select";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -424,5 +434,6 @@
         private System.Windows.Forms.ToolStripMenuItem model1ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem model2ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem model3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoStartToolStripMenuItem;
     }
 }
