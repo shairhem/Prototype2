@@ -70,7 +70,8 @@
             this.textBox1.AllowDrop = true;
             this.textBox1.Location = new System.Drawing.Point(13, 44);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 20);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(283, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             // 
@@ -206,7 +207,8 @@
             "All",
             "Breast",
             "Female Genital",
-            "Male Genital"});
+            "Male Genital",
+            "NONE"});
             this.comboBox3.Location = new System.Drawing.Point(30, 186);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(109, 21);
@@ -248,7 +250,7 @@
             this.pussyToolStripMenuItem,
             this.penisToolStripMenuItem});
             this.selectModelToolStripMenuItem.Name = "selectModelToolStripMenuItem";
-            this.selectModelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectModelToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.selectModelToolStripMenuItem.Text = "select model";
             // 
             // boobsToolStripMenuItem
@@ -335,7 +337,7 @@
             this.fnnToolStripMenuItem,
             this.gnnToolStripMenuItem});
             this.setVariableToolStripMenuItem.Name = "setVariableToolStripMenuItem";
-            this.setVariableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setVariableToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.setVariableToolStripMenuItem.Text = "Set variable";
             // 
             // bnnToolStripMenuItem
@@ -362,7 +364,7 @@
             // autoStartToolStripMenuItem
             // 
             this.autoStartToolStripMenuItem.Name = "autoStartToolStripMenuItem";
-            this.autoStartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.autoStartToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.autoStartToolStripMenuItem.Text = "Auto Start";
             this.autoStartToolStripMenuItem.Click += new System.EventHandler(this.autoStartToolStripMenuItem_Click);
             // 
@@ -392,6 +394,7 @@
             this.Name = "ItemSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Item Select";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemSelectForm_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

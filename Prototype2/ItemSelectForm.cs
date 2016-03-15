@@ -25,7 +25,12 @@ namespace Prototype2
             comboBox2.Enabled = false;
             comboBox3.SelectedIndex = 0;
             openFileDialog1.Multiselect = true;
+            this.KeyPreview = true;
             checkInit();
+
+        }
+        private void temp(object sender, KeyPressEventArgs e)
+        {
 
         }
 
@@ -296,7 +301,7 @@ namespace Prototype2
 
         private void gnnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            itemBrowser itm = new itemBrowser("gnn");
+            itemBrowser itm = new itemBrowser("dnn");
             itm.Show();
         }
 
@@ -321,6 +326,15 @@ namespace Prototype2
                 detect.writeConfig("autoStart", "1");
                 MessageBox.Show("autocheck enabled");
                 checkInit();
+            }
+        }
+
+        private void ItemSelectForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // MessageBox.Show(e.KeyChar.ToString());
+            if(e.KeyChar == '1')
+            {
+                MessageBox.Show("fuckthisshit");
             }
         }
     }

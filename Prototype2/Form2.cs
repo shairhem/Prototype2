@@ -25,12 +25,12 @@ namespace Prototype2
         private CascadeClassifier cascadeBreastLeft = new CascadeClassifier("model/haarcascade_left_boob_2.xml");
         private CascadeClassifier cascadeBreastRight = new CascadeClassifier("model/haarcascade_right_boob_1.xml");
         private CascadeClassifier cascadePuss1 = new CascadeClassifier("model/haarcascade_vagina_front18.xml");
-        private CascadeClassifier cascadePen1 = new CascadeClassifier("model/haarcascade-penis_h_20.xml");
+        private CascadeClassifier cascadePen1 = new CascadeClassifier("model/cascade_pen.xml");
         private CascadeClassifier cascadePuss2 = new CascadeClassifier("model/haarcascade_vagina_1.xml");
         private CascadeClassifier cascadeBreast = new CascadeClassifier("model/cascade_breast.xml");
         private CascadeClassifier cascadePuss = new CascadeClassifier("model/cascade_pussy.xml");
-        private CascadeClassifier cascadePen = new CascadeClassifier("model/cascade_pen.xml");
-        
+        private CascadeClassifier cascadePen = new CascadeClassifier("model/cascade_dick.xml");
+        //private CascadeClassifier cascadePen2 = new CascadeClassifier("model/cascade_dick.xml");
 
         public int totalBreastCount = 0;
         public int totalPussyCount = 0;
@@ -61,7 +61,9 @@ namespace Prototype2
             _file = file;
             this.selectedMode = selectedMode;
             this.roiView = roiView;
-            this.Text = file;
+            //this.Text = file;
+            string[] temp = file.Split('\\');
+            this.Text = temp[temp.Count()-1];
             CvInvoke.UseOpenCL = false;
             try
             {
@@ -219,6 +221,7 @@ namespace Prototype2
                     {
                         if(detect.dickModel == 1)
                         {
+                            Console.WriteLine("dick mode 1");
                             dickDetected = cascadePen.DetectMultiScale(
                             ugray,
                             1.1,
@@ -236,6 +239,7 @@ namespace Prototype2
                         }
                         else
                         {
+                            Console.WriteLine("dick mode 2");
                             dickDetected = cascadePen1.DetectMultiScale(
                             ugray,
                             1.1,
@@ -258,7 +262,12 @@ namespace Prototype2
                         frameList.Add(_frameInfo);
                         recList.Add(recInfo);
                     }
-                    progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString();}));   
+                    try
+                    {
+                        progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Increment(1); label2.Text = frameNum.ToString(); }));
+                    }
+                    catch(Exception err) { }
+                       
                 }
             }
             
@@ -325,6 +334,11 @@ namespace Prototype2
                 _capture.Start();
                 button1.Text = "Stop";
             }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _capture.Dispose();
         }
     }
 }

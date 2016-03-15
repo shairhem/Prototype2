@@ -451,5 +451,10 @@ namespace Prototype2
             }
             _capture.Start();
         }
+
+        private void videoPlayerv2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _capture.Dispose();
+        }
     }
 }

@@ -36,7 +36,6 @@ C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.csproj.ResolveComReference.cache
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.exe
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.pdb
-C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.csprojResolveAssemblyReference.cache
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.Form1.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.Form2.resources
 C:\Users\asdadasfff\Documents\Visual Studio 2015\Projects\Prototype2.1\Prototype2\obj\x86\Debug\Prototype2.itemBrowser.resources
